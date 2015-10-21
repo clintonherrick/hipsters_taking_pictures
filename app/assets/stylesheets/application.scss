@@ -1,0 +1,102 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+html, body {
+  background: url('selfie-stick-hipster-min') no-repeat center center fixed;
+  background-position: 30% 20%;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+
+.main-container {
+  margin-top: 5%;
+}
+
+.landing-text{
+  text-align: center;
+  margin-top: 35%;
+  h1 {
+    font-size: 5em;
+    font-weight: 700;
+  }
+  h6 {
+    font-size: 2em;
+  }
+}
+
+.signup-btn {
+  margin-top: 6%;
+  width: 35rem;
+  height: 7rem;
+  font-size: 2.5em;
+}
+
+.signup-form {
+  margin-top:20%;
+  margin-left:35%;
+  // text-align: center;
+  input {
+    width: 45%;
+    height: 5rem;
+  }
+}
+
+.picture-show {
+  background: rgba(0, 0, 0, 0.2);
+  margin-left: 10%;
+  margin-top: 10%;
+  height: 100rem;
+  text-align: center;
+  .picture-title {
+    h1 {
+      padding-top: 2%;
+      padding-bottom: 1.5%;
+      font-size: 3em;
+    }
+  }
+  .picture-image img {
+    width: 60rem;
+    max-height: 80rem;
+    margin-top: 5%;
+  }
+}
+
+.index-pictures {
+    img {
+    width: 390px;
+    height: 250px;
+    display: inline;
+  }
+}
+
+.btn-default {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #337ab7;
+  transition: background 0.3s linear;
+  &:hover {
+    border: 2px solid #337ab7;
+    background: rgba(255, 255, 255, 0.5);
+    transition: background 0.3s linear;
+  }
+}
+
+.btn-primary {
+  transition: background 0.3s linear;
+  &:hover {
+    transition: background 0.3s linear;
+  }
+}
+
+.bunker{
+  width: 60%;
+  border: 2px solid #337ab7;
+}
+
+.bunker-landing{
+  margin-top: 15%;
+}
+
+.comment-form {
+  margin-left: 10%;
+  margin-bottom: 10rem;
+}

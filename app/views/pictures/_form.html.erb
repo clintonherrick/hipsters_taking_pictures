@@ -1,0 +1,15 @@
+<div class="signup-form">
+  <%= bootstrap_form_for @picture, html: { multipart: true } do |f| %>
+
+  <div class="field form-group">
+    <%= f.text_field :title %>
+  </div>
+  <div class="field form-group">
+    <%= f.file_field :asset, label: "Upload Photo" %>
+  </div>
+  <div class="field form-group">
+    <%= f.submit "Add Picture", class:"btn btn-primary" %>
+  </div>
+
+  <% end %>
+</div>

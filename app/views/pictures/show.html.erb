@@ -1,0 +1,60 @@
+<div class="picture-show">
+  <div class="picture-title">
+    <h1><%= @picture.title %></h1>
+    <% if @picture.tags.any? %>
+       <% @picture.tags.each do |tag| %>
+         <%= link_to tag.name, tag_path(tag) %>
+       <% end %>
+    <% end %>
+    <br><br>
+    <% if current_user.id == @picture.user_id %>
+      <%= bootstrap_form_for @tag, layout: :inline do |f| %>
+          <%= f.text_field :name, hide_label: true%>
+          <%= f.hidden_field :picture_id, value: @picture.id %>
+          <%= f.submit "Add Tag", class:"btn btn-default"%>
+      <% end %>
+    <% end %>
+  </div>
+  <hr>
+
+  <div class="picture-image">
+    <%= image_tag @picture.asset.url(:medium) %>
+  </div>
+
+  <div class="picture-user">
+    <% if @picture.user %>
+      <h4>by <%= @picture.user.email %></h4>
+    <% end %>
+  </div>
+</div>
+
+<div class="comment-form">
+
+<h3>Comments</h3>
+<hr>
+   <% if @comments.any? %>
+    <div class="comments">
+      <% @comments.each do |comment| %>
+        <div class="comment">
+           <p>- <% if comment.user %>
+             <%= comment.user.username%>:
+             <% end %>
+             <%= comment.body %></p>
+        </div>
+      <% end %>
+    </div>
+   <% else %>
+    <p>Be the first to comment, before it's cool.</p>
+   <% end %>
+
+  <%= bootstrap_form_for [@picture, @comment] do |f| %>
+
+    <div class="field form-group">
+      <%= f.text_area :body, size: "24x6" %>
+    </div>
+    <div class="field form-group">
+      <%= f.submit "Comment", class:"pull-right btn btn-primary"%>
+    </div>
+
+  <% end %>
+</div>

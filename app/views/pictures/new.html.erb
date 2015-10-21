@@ -1,0 +1,14 @@
+<% if current_user %>
+  <%= render 'pictures/form' %>
+<% else %>
+  <div class="landing-text bunker-landing">
+
+    <h1>Y'all Got's To Signs In</h1>
+
+    <%= image_tag 'michaelBunkersad.png', class: "bunker" %>
+
+<br>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary signup-btn" %>
+    <%= link_to "Sign In", new_user_session_path, class: "btn btn-default signup-btn" %>
+  </div>
+  <% end %>
