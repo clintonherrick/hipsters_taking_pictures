@@ -1,7 +1,7 @@
 User.create!([
   {email: "hotline@hotline.com", encrypted_password: "$2a$10$9evgSyxl1jD5QExnwXGrIun/TQRCJzeGo/MUUVYh9P3d.Z2qEtVK6", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-10-22 21:36:59", last_sign_in_at: "2015-10-22 21:36:59", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "HotlineBling", avatar_file_name: "hipster-358479_1920.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 633983, avatar_updated_at: "2015-10-22 21:36:58"},
-  {email: "ajhaupt7@gmail.com", encrypted_password: "$2a$10$Yv.tdGW8dCQQavqK9tAEOuqjsDEpFBL9u/1OIrQF2kxTm6chk5xYW", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2015-10-22 21:41:18", last_sign_in_at: "2015-10-22 16:35:40", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "ajhaupt7", avatar_file_name: "Photo_on_10-22-15_at_2.38_PM.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 71954, avatar_updated_at: "2015-10-22 21:42:54"},
-  {email: "crampton.travis@gmail.com", encrypted_password: "$2a$10$Ld5oJRS0xm2DIDagmq9B..mpfAphVu/x9qlCnH329NximfdfbhQ3C", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-10-22 21:43:13", last_sign_in_at: "2015-10-22 18:42:50", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "traviscrampton", avatar_file_name: "Photo_on_10-22-15_at_2.38_PM__2.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 111622, avatar_updated_at: "2015-10-22 21:43:32"}
+  {email: "crampton.travis@gmail.com", encrypted_password: "$2a$10$Ld5oJRS0xm2DIDagmq9B..mpfAphVu/x9qlCnH329NximfdfbhQ3C", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-10-22 21:43:13", last_sign_in_at: "2015-10-22 18:42:50", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "traviscrampton", avatar_file_name: "Photo_on_10-22-15_at_2.38_PM__2.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 111622, avatar_updated_at: "2015-10-22 21:43:32"},
+  {email: "ajhaupt7@gmail.com", encrypted_password: "$2a$10$Yv.tdGW8dCQQavqK9tAEOuqjsDEpFBL9u/1OIrQF2kxTm6chk5xYW", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-10-22 22:41:19", last_sign_in_at: "2015-10-22 21:41:18", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "ajhaupt7", avatar_file_name: "Photo_on_10-22-15_at_2.38_PM.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 71954, avatar_updated_at: "2015-10-22 21:42:54"}
 ])
 Comment.create!([
   {body: "This makes me feel uncomfortable", user_id: 1, picture_id: 12},
@@ -15,7 +15,12 @@ Favorite.create!([
   {picture_id: 12, user_id: 1},
   {picture_id: 12, user_id: 4},
   {picture_id: 10, user_id: 4},
-  {picture_id: 2, user_id: 1}
+  {picture_id: 2, user_id: 1},
+  {picture_id: 15, user_id: 1},
+  {picture_id: 16, user_id: 1},
+  {picture_id: 15, user_id: 2},
+  {picture_id: 16, user_id: 2},
+  {picture_id: 17, user_id: 2}
 ])
 Picture.create!([
   {title: "Bunker Also Looking Good", user_id: 1, asset_file_name: "bunker1.jpg", asset_content_type: "image/jpeg", asset_file_size: 18053, asset_updated_at: "2015-10-22 16:12:33"},
@@ -30,7 +35,11 @@ Picture.create!([
   {title: "Sure I'll Pair With You Next Tuesday!", user_id: 2, asset_file_name: "774766_10200393556106040_872706894_o.jpg", asset_content_type: "image/jpeg", asset_file_size: 328261, asset_updated_at: "2015-10-22 16:46:51"},
   {title: "The Hats of Heupler", user_id: 2, asset_file_name: "541925_10200722205839697_1707849612_n.jpg", asset_content_type: "image/jpeg", asset_file_size: 95320, asset_updated_at: "2015-10-22 16:47:41"},
   {title: "Fresh Candy and A Sexy Smolder", user_id: 2, asset_file_name: "10469889_10204641565461238_5329401542212634084_n.jpg", asset_content_type: "image/jpeg", asset_file_size: 51223, asset_updated_at: "2015-10-22 16:48:27"},
-  {title: "JAKE LOOKING REAL GOOD", user_id: 1, asset_file_name: "selfie.jpg", asset_content_type: "image/jpeg", asset_file_size: 21375, asset_updated_at: "2015-10-22 16:11:38"}
+  {title: "JAKE LOOKING REAL GOOD", user_id: 1, asset_file_name: "selfie.jpg", asset_content_type: "image/jpeg", asset_file_size: 21375, asset_updated_at: "2015-10-22 16:11:38"},
+  {title: "LOOKIN FINE", user_id: 1, asset_file_name: "522198_542448039197_799274741_n.jpg", asset_content_type: "image/jpeg", asset_file_size: 85731, asset_updated_at: "2015-10-22 22:40:46"},
+  {title: "dreamy", user_id: 1, asset_file_name: "10518303_10205071308532422_7350838567375708163_o.jpg", asset_content_type: "image/jpeg", asset_file_size: 299805, asset_updated_at: "2015-10-22 22:41:09"},
+  {title: "SHE USED TO CALL ME ON MY...", user_id: 2, asset_file_name: "11217560_10155847337765626_4342920810664042320_n.jpg", asset_content_type: "image/jpeg", asset_file_size: 35865, asset_updated_at: "2015-10-22 22:43:46"},
+  {title: "Too hipster to even look", user_id: 2, asset_file_name: "11146295_10155411514500626_1695256135487152899_n.jpg", asset_content_type: "image/jpeg", asset_file_size: 41249, asset_updated_at: "2015-10-22 22:44:14"}
 ])
 Picture::HABTM_Tags.create!([
   {picture_id: 8, tag_id: 1},
@@ -45,7 +54,12 @@ Picture::HABTM_Tags.create!([
   {picture_id: 13, tag_id: 4},
   {picture_id: 10, tag_id: 3},
   {picture_id: 4, tag_id: 5},
-  {picture_id: 4, tag_id: 6}
+  {picture_id: 4, tag_id: 6},
+  {picture_id: 18, tag_id: 7},
+  {picture_id: 18, tag_id: 8},
+  {picture_id: 17, tag_id: 9},
+  {picture_id: 17, tag_id: 8},
+  {picture_id: 17, tag_id: 1}
 ])
 Tag.create!([
   {name: "#fun"},
@@ -53,7 +67,10 @@ Tag.create!([
   {name: "#hawt"},
   {name: "#heupler"},
   {name: "#athlete"},
-  {name: "#oregon state"}
+  {name: "#oregon state"},
+  {name: "#hipster"},
+  {name: "#cool"},
+  {name: "#drake"}
 ])
 Tag::HABTM_Pictures.create!([
   {picture_id: 8, tag_id: 1},
@@ -68,5 +85,10 @@ Tag::HABTM_Pictures.create!([
   {picture_id: 13, tag_id: 4},
   {picture_id: 10, tag_id: 3},
   {picture_id: 4, tag_id: 5},
-  {picture_id: 4, tag_id: 6}
+  {picture_id: 4, tag_id: 6},
+  {picture_id: 18, tag_id: 7},
+  {picture_id: 18, tag_id: 8},
+  {picture_id: 17, tag_id: 9},
+  {picture_id: 17, tag_id: 8},
+  {picture_id: 17, tag_id: 1}
 ])
