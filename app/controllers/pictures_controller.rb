@@ -20,6 +20,31 @@ class PicturesController < ApplicationController
     end
   end
 
+  def edit
+    @picture = Picture.find(params[:id])
+  end
+
+  def update
+
+    @picture = Picture.find(params[:id])
+    if @picture.update(picture_params)
+      redirect_to picture_path(@picture)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @picture = Picture.find(params[:id])
+    if @picture.destroy
+      redirect_to user_path(current_user)
+      flash[:notice] = "You Told That Pic To GTFO"
+    else
+      flash[:alert] = "That Pic Ain't Goin Anywhere"
+    end
+  end
+
+
   def show
     @picture = Picture.find(params[:id])
     @favorite = Favorite.new

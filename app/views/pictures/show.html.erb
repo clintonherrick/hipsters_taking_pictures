@@ -21,6 +21,10 @@
     <% end %>
     <br><br>
     <% if current_user.id == @picture.user_id %>
+    <%= link_to (fa_icon 'pencil'), edit_picture_path(@picture), class:"btn btn-default" %>
+    <%= link_to (fa_icon 'trash'), picture_path(@picture), class:"btn btn-default",
+                      :data => {:confirm => "Y'all Really Wanna Go This Route?!",
+                                :method => "delete"} %>
       <%= bootstrap_form_for @tag, layout: :inline do |f| %>
           <%= f.text_field :name, hide_label: true%>
           <%= f.hidden_field :picture_id, value: @picture.id %>
