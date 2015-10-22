@@ -17,6 +17,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @picture = Picture.find(params[:picture_id])
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      redirect_to picture_path(@picture)
+      flash[:notice] = "Going back on what you said? Craven."
+    else
+      redirect_to picture_path(@picture)
+      flash[:alert] = "Nice Try Craven"
+    end
+  end
+
   private
 
   def comment_params

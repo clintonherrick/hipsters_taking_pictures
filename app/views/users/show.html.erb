@@ -1,9 +1,26 @@
 <div class="index-space">
-  <div class="header">
-    <h1><%= @user.username %></h1>
-    <legend><h2>Your 'roids</h2></legend>
+  <div class="header row">
+    <div class='col-md-3'>
+      <%= image_tag @user.avatar.url(:medium) %>
+    </div>
+    <div class="col-md-9 prof-name">
+      <h1><%= @user.username %></h1>
+      <% if current_user == @user %>
+        <br><br>
+        <h4><%= link_to 'Edit', edit_registration_path(@user) %></h4>
+        <h4><%= link_to "Cancel my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete %></h4>
+      <% end %>
+    </div>
   </div>
-  <div class="row">
+  <div id="roids" class="row">
+    <% if current_user.id == @user.id %>
+      <h2>Your 'roids</h2>
+      <hr>
+    <% else %>
+      <h2><%= @user.username %>'s roids</h2>
+    <hr>
+    <% end %>
+
     <% @user.pictures.each do |picture| %>
       <div class="col-md-4 index-pictures">
         <%= link_to (image_tag picture.asset.url(:medium)), picture_path(picture) %>
@@ -12,7 +29,12 @@
   </div>
 
   <div class="marginalize">
-    <legend><h2>Your Favs</h2></legend>
+    <% if current_user.id == @user.id %>
+      <h2>Your Favs</h2>
+    <% else %>
+    <h2><%= @user.username %>'s favs</h2>
+    <% end %>
+    <hr>
   </div>
    <div class="row">
      <% @user.favorites.each do |favorite| %>

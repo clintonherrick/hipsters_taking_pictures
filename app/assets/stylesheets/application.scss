@@ -44,10 +44,12 @@ html, body {
 
 .picture-show {
   background: rgba(0, 0, 0, 0.2);
-  margin-left: 10%;
+  margin-left: 7%;
   margin-top: 10%;
-  height: 100rem;
+  min-width: 100rem;
   text-align: center;
+  display:inline-block;
+  // overflow:auto;
   .picture-title {
     h1 {
       padding-top: 2%;
@@ -59,7 +61,12 @@ html, body {
     width: 60rem;
     max-height: 80rem;
     margin-top: 5%;
+    margin-bottom: 5%;
   }
+}
+
+.picture-user {
+  text-align: center;
 }
 
 .index-pictures {
@@ -98,13 +105,31 @@ html, body {
 }
 
 .comment-form {
-  margin-left: 10%;
+  margin-left: 7%;
   margin-bottom: 10rem;
 }
 
 .header {
-  h1, h2 {
+  .prof-name {
+    margin-top: 7%;
+  }
+  h1{
+    font-size: 5em;
     color: white;
+    display: inline;
+    text-shadow: 3px 3px 5px #333;
+  } h4 {
+    display: inline;
+  }
+   h2 {
+    color: white;
+    text-shadow: 3px 3px 5px #333;
+  } img {
+    border-radius: 75%;
+    width: 22rem;
+    height: 22rem;
+    display: inline;
+    box-shadow: 3px 3px 5px #333;
   }
 }
 
@@ -114,4 +139,21 @@ html, body {
 
 .marginalize{
   margin-top: 3%;
+  h2 {
+    text-shadow: 3px 3px 5px #333;
+    color: #fff;
+  }
+}
+
+#roids {
+  color: #fff;
+  margin-left: 0%;
+  margin-top: 5%;
+  text-shadow: 3px 3px 5px #333;
+}
+
+.comment-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
 }

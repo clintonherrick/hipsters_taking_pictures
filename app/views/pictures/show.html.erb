@@ -37,12 +37,11 @@
   <div class="picture-image">
     <%= image_tag @picture.asset.url(:medium) %>
   </div>
-
-  <div class="picture-user">
-    <% if @picture.user %>
-      <h4>by <%= link_to @picture.user.username, user_path(@picture.user.id) %></h4>
-    <% end %>
-  </div>
+</div>
+<div class="picture-user">
+  <% if @picture.user %>
+  <h4>by <%= link_to @picture.user.username, user_path(@picture.user.id) %></h4>
+  <% end %>
 </div>
 
 <div class="comment-form">
@@ -53,10 +52,16 @@
     <div class="comments">
       <% @comments.each do |comment| %>
         <div class="comment">
-           <p>- <% if comment.user %>
-             <%= comment.user.username%>:
+           <p> <% if comment.user %>
+             <%= image_tag comment.user.avatar.url(:thumb), class:"comment-img" %>
+             <%= link_to comment.user.username, user_path(comment.user.id)%>:
              <% end %>
-             <%= comment.body %></p>
+             <%= comment.body %>
+             <% if current_user == comment.user %>
+             <%= link_to (fa_icon 'trash'), picture_comment_path(@picture, comment), class:"btn btn-default",
+             :data => {:confirm => "Y'all Really Wanna Go This Route?!",
+               :method => "delete"} %>
+               <% end %></p>
         </div>
       <% end %>
     </div>

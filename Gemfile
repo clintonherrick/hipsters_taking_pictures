@@ -10,11 +10,14 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
 gem 'devise'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
 gem 'bootstrap_form'
 gem "font-awesome-rails"
+gem 'seed_dump'
 
 group :development do
   gem 'byebug'
+  gem "letter_opener"
   gem 'web-console'
   gem 'spring'
   gem 'quiet_assets'
