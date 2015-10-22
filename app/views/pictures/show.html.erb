@@ -23,7 +23,7 @@
 
   <div class="picture-user">
     <% if @picture.user %>
-      <h4>by <%= @picture.user.email %></h4>
+      <h4>by <%= link_to @picture.user.username, user_path(@picture.user.id) %></h4>
     <% end %>
   </div>
 </div>

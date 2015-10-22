@@ -1,0 +1,15 @@
+<div class="header">
+  <h1><%= @user.username %></h1>
+  <legend><h2>Your 'roids</h2></legend>
+</div>
+<div class="row">
+  <% @user.pictures.each do |picture| %>
+    <div class="col-md-4 index-pictures">
+      <%= link_to (image_tag picture.asset.url(:medium)), picture_path(picture) %>
+    </div>
+  <% end %>
+</div>
+
+<div class="marginalize">
+  <legend><h2>Your Favs</h2></legend>
+</div>

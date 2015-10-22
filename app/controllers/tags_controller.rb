@@ -2,7 +2,11 @@ class TagsController < ApplicationController
 
   def create
     @picture = Picture.find(params[:tag][:picture_id])
-    name = "#" + (params[:tag][:name])
+    if (params[:tag][:name]).include?("#")
+      name = (params[:tag][:name])
+    else
+      name = "#" + (params[:tag][:name])
+    end
     if Tag.find_by(name: name)
       @tag = Tag.find_by(name: name)
       @picture.tags << @tag

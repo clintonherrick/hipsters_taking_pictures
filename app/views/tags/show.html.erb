@@ -1,13 +1,23 @@
-<h1>All Pictures that <%= @tag.name %></h1>
+<div class="header">
+  <h1><%= @tag.name %></h1>
+</div>
 
 
 <% if @tag.pictures.length > 1 %>
-  <% @tag.pictures.each do |picture| %>
-    <%= link_to (image_tag picture.asset.url(:medium)), picture_path(picture) %>
-  <% end %>
-    <% else %>
-  <h2>Congrats You tagged it before it was cool</h2>
-    <% @tag.pictures.each do |picture| %>
-      <%= link_to (image_tag picture.asset.url(:medium)), picture_path(picture) %>
-    <% end %>
-  <% end %>
+    <div class="row">
+      <% @tag.pictures.each do |picture| %>
+      <div class="col-md-4 index-pictures">
+        <%= link_to (image_tag picture.asset.url(:medium)), picture_path(picture) %>
+      </div>
+      <% end %>
+    </div>
+<% else %>
+      <h2>Congrats You tagged it before it was cool</h2>
+    <div class="row">
+      <% @tag.pictures.each do |picture| %>
+        <div class="col-md-4 index-pictures">
+          <%= link_to (image_tag picture.asset.url(:medium)), picture_path(picture) %>
+        </div>
+      <% end %>
+    </div>
+<% end %>
