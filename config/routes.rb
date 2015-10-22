@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :favorites
+
   resources :tags
 
   resources :users, only: [:show]

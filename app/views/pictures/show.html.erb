@@ -1,6 +1,19 @@
 <div class="picture-show">
   <div class="picture-title">
     <h1><%= @picture.title %></h1>
+    <% if @picture.favorites.any? %>
+      <% if current_user.favorites.find_by(picture_id: @picture.id) %>
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+      <% else %>
+        <%= link_to (fa_icon 'heart'), {action: :create, controller: :favorites, favorite: {user_id: current_user.id, picture_id: @picture.id}}, method: :post  %>
+      <% end %>
+      <%= @picture.favorites.length.to_s %>
+    <% else %>
+    <%= link_to (fa_icon 'heart'), {action: :create, controller: :favorites, favorite: {user_id: current_user.id, picture_id: @picture.id}}, method: :post  %> 0
+    <% end %>
+
+    <br>
+
     <% if @picture.tags.any? %>
        <% @picture.tags.each do |tag| %>
          <%= link_to tag.name, tag_path(tag) %>
